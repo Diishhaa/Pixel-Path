@@ -1,4 +1,5 @@
-# SkillTree — Gamified Adaptive Learning Platform
+# Pixel-Path 
+— Gamified Adaptive Learning Platform
 
 SkillTree is a gamified, adaptive tutoring system designed to teach programming courses (such as Python) through an interactive RPG-style web app. It generates branching course roadmaps automatically from YouTube playlists and evaluates real-time quiz performance via animated pixel-art combat screens.
 
