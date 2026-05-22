@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+python-dotenv
+youtube-transcript-api
+yt-dlp
+google-generativeai
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart

@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Global resets ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background-color: #0a0e1a;
+  color: #e0e8ff;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* ── Pixel scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 8px; background: #0a0e1a; }
+::-webkit-scrollbar-thumb { background: #2a3555; }
+
+/* ── Pixel border utility ─────────────────────────────────────────── */
+.pixel-border {
+  border: 3px solid #2a3555;
+  box-shadow: 4px 4px 0px #000;
+  image-rendering: pixelated;
+}
+
+.pixel-border-gold {
+  border: 3px solid #ffd700;
+  box-shadow: 4px 4px 0px #000, 0 0 16px #ffd70066;
+}
+
+.pixel-border-green {
+  border: 3px solid #00ff88;
+  box-shadow: 4px 4px 0px #000, 0 0 16px #00ff8866;
+}
+
+.pixel-border-red {
+  border: 3px solid #ff4444;
+  box-shadow: 4px 4px 0px #000, 0 0 16px #ff444466;
+}
+
+/* ── Pixel button ─────────────────────────────────────────────────── */
+.pixel-btn {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.65rem;
+  padding: 12px 20px;
+  cursor: pointer;
+  border: 3px solid currentColor;
+  box-shadow: 4px 4px 0px #000;
+  transition: transform 0.1s, box-shadow 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+}
+
+.pixel-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px #000;
+}
+
+.pixel-btn-gold  { color: #ffd700; border-color: #ffd700; }
+.pixel-btn-gold:hover  { background: #ffd70022; }
+
+.pixel-btn-green { color: #00ff88; border-color: #00ff88; }
+.pixel-btn-green:hover { background: #00ff8822; }
+
+.pixel-btn-red   { color: #ff4444; border-color: #ff4444; }
+.pixel-btn-red:hover   { background: #ff444422; }
+
+/* ── XP bar ───────────────────────────────────────────────────────── */
+.xp-bar-track {
+  height: 12px;
+  background: #1a2035;
+  border: 2px solid #2a3555;
+  overflow: hidden;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  transition: width 0.8s ease;
+}
+
+/* ── HP bar ───────────────────────────────────────────────────────── */
+.hp-bar-track {
+  height: 16px;
+  background: #1a2035;
+  border: 2px solid #2a3555;
+  overflow: hidden;
+}
+
+.hp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff4444, #ff8800);
+  transition: width 0.5s ease;
+}
+
+.hp-bar-fill.enemy {
+  background: linear-gradient(90deg, #bb44ff, #ff44aa);
+}
+
+/* ── Node map road ────────────────────────────────────────────────── */
+.node-road {
+  width: 4px;
+  background: repeating-linear-gradient(
+    180deg,
+    #2a3555 0px, #2a3555 12px,
+    transparent 12px, transparent 20px
+  );
+  margin: 0 auto;
+}
+
+/* ── Sprite placeholder ───────────────────────────────────────────── */
+.sprite-placeholder {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* ── Scanline overlay for retro feel ─────────────────────────────── */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.08) 2px,
+    rgba(0,0,0,0.08) 4px
+  );
+  pointer-events: none;
+}
+
+/* ── Fade transition ──────────────────────────────────────────────── */
+.fade-enter        { opacity: 0; transform: translateY(8px); }
+.fade-enter-active { opacity: 1; transform: translateY(0); transition: all 0.3s ease; }
+.fade-exit         { opacity: 1; }
+.fade-exit-active  { opacity: 0; transition: opacity 0.2s ease; }
